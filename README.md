@@ -27,3 +27,7 @@
          view.insert(edit, 0, "HelloWorld");
          console.log(view.file_name());
      });
+
+## Troubeshooting
+
+ If the plugin doesn't work, follow the guide - lib/PyV8/README.md.

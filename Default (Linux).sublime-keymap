@@ -1,6 +1,6 @@
 [
 	{ 
-		"keys": ["ctrl+alt+h"], 
+		"keys": ["ctrl+super+h"], 
 		"command": "js_hint", 
 	    "context": [{
       		"operand": "source.js, text.html",
@@ -10,7 +10,7 @@
     	}]
 	},
 	{ 
-		"keys": ["ctrl+alt+j"], 
+		"keys": ["ctrl+super+j"], 
 		"command": "js_console"
 	},
 	{
@@ -54,7 +54,7 @@
     	}]
 	},
 	{ 
-		"keys": ["ctrl+alt+g"], 
+		"keys": ["ctrl+super+g"], 
 		"command": "js_command",
 		"args": {
 			"module" : "test",
