@@ -1,10 +1,6 @@
 # sublime-v8
 	
  added [Google v8 engine](http://code.google.com/p/v8/) to sublime text 2
- 
- support windows : [sublime-v8 for win32](https://github.com/akira-cn/sublime-v8-win32)
- 
- support mac os : [sublime-v8 for osx](https://github.com/akira-cn/sublime-v8-osx)
 
 ## Realtime syntax checking with [PyV8](https://github.com/okoye/PyV8)
 
