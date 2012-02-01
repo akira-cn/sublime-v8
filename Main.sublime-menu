@@ -1,0 +1,58 @@
+[
+    {
+        "id": "tools",
+        "children":
+        [
+            {
+                "caption": "V8",
+                "id": "V8",
+                "children":
+                [
+                    {
+                        "caption": "Run JSHint",
+                        "command": "js_hint"
+                    },
+                    {
+                        "caption": "Show Console",
+                        "command": "js_console"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "preferences",
+        "children":
+        [
+            {
+                "caption": "Package Settings",
+                "id": "package-settings",
+                "children":
+                [
+                    {
+                        "caption": "V8",
+                        "children":
+                        [
+                            {
+                                "caption": "JSHINT Settings – Default",
+                                "command": "open_file",
+                                "args":
+                                {
+                                    "file": "${packages}/sublime-V8/JSHINT.sublime-settings"
+                                }
+                            },
+                            {
+                                "caption": "JSHINT Settings – User",
+                                "command": "open_file",
+                                "args":
+                                {
+                                    "file": "${packages}/User/JSHINT.sublime-settings"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

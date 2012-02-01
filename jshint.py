@@ -21,8 +21,6 @@ class JsHintCommand(sublime_plugin.WindowCommand):
 	def run(self):
 		view = self.window.active_view()
 		jsscopes = view.find_by_selector('source.js - entity.name.tag.script.html - punctuation.definition.tag.html')
-		if(not jsscopes):
-			return
 
 		self.window.run_command("show_panel", {"panel": "output."+JSHINT_VIEW_NAME})
 		#self.window.focus_view(self.panel)

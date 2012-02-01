@@ -1,0 +1,10 @@
+[
+    {
+        "caption": "V8: Run JSHint",
+        "command": "js_hint"
+    },
+    {
+        "caption": "V8: Show Console",
+        "command": "js_console"
+    }
+]
