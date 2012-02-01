@@ -25,10 +25,10 @@ except Exception, e:
 		Maybe you need to build v8 follow the guide of lib/PyV8/README.md. 
 	''' 
 
-MODULE_NAME = 'sublime-v8'
+MODULE_PATH = os.getcwd()
 
 def package_file(filename):
-	return os.path.join(sublime.packages_path(), MODULE_NAME, filename)	
+	return os.path.join(MODULE_PATH, filename)	
 
 JSCONSOLE_VIEW_NAME = 'jsconsole_view'
 class JsConsoleCommand(sublime_plugin.WindowCommand):
@@ -36,7 +36,8 @@ class JsConsoleCommand(sublime_plugin.WindowCommand):
 		self.console = window.get_output_panel(JSCONSOLE_VIEW_NAME)
 		self.console.set_name(JSCONSOLE_VIEW_NAME)
 		self.window = window
-		js_print_m(self.console, "#JavaScript Console version 0.2")
+		version = sublime.load_settings('package-metadata.json').get('version') or 'dev'
+		js_print_m(self.console, "#JavaScript Console (build:" + version + ")")
 		JsConsoleCommand.core = JSCore(self.console)
 		JsConsoleCommand.ctx = PyV8.JSContext(JsConsoleCommand.core)
 		JsConsoleCommand.js = PyV8.JSEngine()
