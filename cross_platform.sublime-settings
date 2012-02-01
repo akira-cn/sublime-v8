@@ -1,14 +1,14 @@
 {
 	"windows" : {
 		"description" : "PyV8 build for win32",
-		"lib_path" : "./lib/PyV8/win32"
+		"lib_path" : "lib/PyV8/win32"
 	},
 	"osx" : {
 		"description" : "PyV8 build for osx",
-		"lib_path" : "./lib/PyV8/osx"
+		"lib_path" : "lib/PyV8/osx"
 	},
 	"linux" : {
 		"description" : "PyV8 build for linux",
-		"lib_path" : "./lib/PyV8/linux"		
+		"lib_path" : "lib/PyV8/linux"		
 	}
 }

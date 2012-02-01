@@ -3,6 +3,8 @@
 import sublime, sublime_plugin
 import sys,os,re
 
+MODULE_PATH = os.getcwd()
+
 def cross_platform():
 	platform = sublime.platform()
 	settings = sublime.load_settings('cross_platform.sublime-settings')
@@ -13,7 +15,8 @@ def cross_platform():
 			Maybe you need to build v8 follow the guide of lib/PyV8/README.md. 
 		'''
 	lib_path = platform_supported.get('lib_path')
-	sys.path.append(lib_path)
+	if(not lib_path in sys.path):
+		sys.path.append(os.path.join(MODULE_PATH, lib_path))
 
 cross_platform();
 
@@ -24,8 +27,6 @@ except Exception, e:
 		Sorry, the v8 engine are not built correctlly.
 		Maybe you need to build v8 follow the guide of lib/PyV8/README.md. 
 	''' 
-
-MODULE_PATH = os.getcwd()
 
 def package_file(filename):
 	return os.path.join(MODULE_PATH, filename)	
