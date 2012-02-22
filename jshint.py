@@ -2,7 +2,7 @@
 
 import sublime, sublime_plugin
 import PyV8
-import sys, re
+import sys, re, platform
 from core import package_file
 
 JSHINT_VIEW_NAME = 'jshint_view'
@@ -54,7 +54,6 @@ class JsHintCommand(sublime_plugin.WindowCommand):
 							
 							details = []
 							if('line' in keys):
-								print scope
 								details.append(' line : ' + str(error.line + view.rowcol(scope.begin())[0]))
 							if('character' in keys):
 								details.append(' character : ' + str(error.character))
@@ -89,7 +88,12 @@ def dump_settings(settings, keys):
 def on_syntax_error(view, context, scope):
 	source = view.substr(scope)
 	try:
-		context.eval(str(source))
+		if(platform.system() == 'Windows'):
+			try:
+				source = source.encode('utf-8')
+			except:
+				source = source.encode('gbk')
+		context.eval(source)
 	except Exception,ex:
 		if('name' in dir(ex) and ex.name == 'SyntaxError'):
 			err_region = sublime.Region(scope.begin() + ex.startPos, scope.begin() + ex.endPos)

@@ -17,6 +17,7 @@ def cross_platform():
 	lib_path = platform_supported.get('lib_path')
 	if(not lib_path in sys.path):
 		sys.path.append(os.path.join(MODULE_PATH, lib_path))
+		sys.path.append(MODULE_PATH)
 
 cross_platform();
 
@@ -194,7 +195,7 @@ class JSCore(PyV8.JSClass):
 	def load(self, module, root={'name' : 'root', 'submodules' : [], 'parent' : None}, sort=True):
 		modules = self._js_modules
 		path = modules.get(module)
-		print path
+		#print path
 		leaf = {}
 
 		def parents(a):

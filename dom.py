@@ -34,7 +34,9 @@ class Document(JSClass):
 		return JSArray([normalizeNode(node) for node in nodelist])
 	def createElement(self, tagName):
 		return normalizeNode(BeautifulSoup(tagName).contents[0])
-		
+	@property	
+	def body(self):
+		return normalizeNode(self._soup.find('body'))
 
 class Node(JSClass, object): #baseclass
 	def __init__(self, soup):
