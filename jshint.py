@@ -142,14 +142,17 @@ class EventListener(sublime_plugin.EventListener):
     			file_view.run_command("goto_line", {"line": row})
 	      		
 	def on_modified(self, view):
-		jsscopes = view.find_by_selector('source.js - entity.name.tag.script.html - punctuation.definition.tag.html')
-		if(not jsscopes):
-			return
-
-		view.erase_regions('v8_errors')
-		sublime.status_message('')
-
-		for scope in jsscopes:
-			sublime.set_timeout((lambda view,context,scope : (lambda: on_syntax_error(view, context, scope)))(view, self.ctx, scope), 1)
+		sublime.set_timeout((lambda view,context : (lambda: realtimeHint(view, context)))(view, self.ctx), 1)
 		
 
+def realtimeHint(view, ctx):
+	jsscopes = view.find_by_selector('source.js - entity.name.tag.script.html - punctuation.definition.tag.html')
+	if(not jsscopes):
+		return
+
+	view.erase_regions('v8_errors')
+	sublime.status_message('')
+
+	for scope in jsscopes:
+		on_syntax_error(view, ctx, scope)
+		
