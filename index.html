@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Sublime-v8 : v8 engine for sublime text 2" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Sublime-v8</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/akira-cn/sublime-v8">View on GitHub</a>
+
+          <h1 id="project_title">Sublime-v8</h1>
+          <h2 id="project_tagline">v8 engine for sublime text 2</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/akira-cn/sublime-v8/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/akira-cn/sublime-v8/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="sublime-v8" class="anchor" href="#sublime-v8"><span class="octicon octicon-link"></span></a>sublime-v8</h1>
+
+<p>added <a href="http://code.google.com/p/v8/">Google v8 engine</a> to sublime text 2</p>
+
+<h2>
+<a name="realtime-syntax-checking-with-pyv8" class="anchor" href="#realtime-syntax-checking-with-pyv8"><span class="octicon octicon-link"></span></a>Realtime syntax checking with <a href="https://github.com/okoye/PyV8">PyV8</a>
+</h2>
+
+<p>check &amp; mark syntax errors</p>
+
+<h2>
+<a name="show-jshint-result-by-press-ctrlalth-key" class="anchor" href="#show-jshint-result-by-press-ctrlalth-key"><span class="octicon octicon-link"></span></a>Show <a href="http://www.jshint.com/">jshint</a> result by press ctrl+alt+h key</h2>
+
+<p>jshint result can be shown (including errors and warnings)</p>
+
+<p>with jshint settings in JSHINT.sublime-settings </p>
+
+<h2>
+<a name="a-javascript-console-supported" class="anchor" href="#a-javascript-console-supported"><span class="octicon octicon-link"></span></a>A JavaScript console supported</h2>
+
+<p>a js console shown by press ctrl+alt+j key</p>
+
+<p>use it like the python console</p>
+
+<h2>
+<a name="writing-plugin-in-javascript" class="anchor" href="#writing-plugin-in-javascript"><span class="octicon octicon-link"></span></a>Writing plugin in JavaScript:</h2>
+
+<pre><code> //example
+ require('base');
+
+ exports = TextCommand("HelloWorld", function(view, edit){
+     view.insert(edit, 0, "HelloWorld");
+     console.log(view.file_name());
+ });
+</code></pre>
+
+<h2>
+<a name="troubeshooting" class="anchor" href="#troubeshooting"><span class="octicon octicon-link"></span></a>Troubeshooting</h2>
+
+<p>If the plugin doesn't work, follow the guide - lib/PyV8/README.md.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Sublime-v8 maintained by <a href="https://github.com/akira-cn">akira-cn</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
